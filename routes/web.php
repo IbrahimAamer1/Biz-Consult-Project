@@ -22,9 +22,11 @@ Route::name('front.')->group(function (){
 
 });
 
-/* Route::get('/', function () {
-    return view('front.index');
-}); */
+Route::name('admin.')->prefix('admin')->group(function (){
+    Route::view('/', 'admin.index')->name('index');
+});
+
+    
 
 Route::get('/dashboard', function () {
     return view('dashboard');
