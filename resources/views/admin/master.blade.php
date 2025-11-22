@@ -1,7 +1,12 @@
+  @php
+    use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+    
+  @endphp
+
 <!doctype html>
 <html lang="en">
     @include('admin.partials.head')
-  <body class="vertical  light  ">
+  <body class="vertical  light  @if(LaravelLocalization::getCurrentLocale() == 'ar') rtl @endif ">
     <div class="wrapper">
     @include('admin.partials.navbar')
 
@@ -13,4 +18,4 @@
     </div> <!-- .wrapper -->
   @include('admin.partials.scripts')
   </body>
-</html>
+</html> 

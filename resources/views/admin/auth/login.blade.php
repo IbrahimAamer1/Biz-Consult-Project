@@ -1,10 +1,12 @@
+
 @extends('admin.auth.master')
-@section('title', 'Login')
+@section('title', __('keywords.login'))
 @section('content')
 <div class="wrapper vh-100">
       <div class="row align-items-center h-100">
         <form method="POST" action="{{ route('admin.login') }}" class="col-lg-3 col-md-4 col-10 mx-auto text-center">
           @csrf
+          @include('admin.partials.language')
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
             <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
               <g>
@@ -13,24 +15,25 @@
                 <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
               </g>
             </svg>
+
           </a>
-          <h1 class="h6 mb-3">Sign in</h1>
+          <h1 class="h6 mb-3">{{ __('keywords.sign_in') }}</h1>
           <session-status class="mb-4" :status="session('status')" />
           <div class="form-group">
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" name="email" class="form-control form-control-lg" placeholder="Email address" required="" autofocus="" value="{{ old('email') }}">
+            <label for="inputEmail" class="sr-only">{{ __('keywords.email_address') }}</label>
+            <input type="email" id="inputEmail" name="email" class="form-control form-control-lg" placeholder="{{ __('keywords.email_address') }}" required="" autofocus="" value="{{ old('email') }}">
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
           </div>
           <div class="form-group">
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" name="password" class="form-control form-control-lg" placeholder="Password" required="" value="{{ old('password') }}">
+            <label for="inputPassword" class="sr-only">{{ __('keywords.password') }}</label>
+            <input type="password" id="inputPassword" name="password" class="form-control form-control-lg" placeholder="{{ __('keywords.password') }}" required="" value="{{ old('password') }}">
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
           </div>
           <div class="checkbox mb-3">
             <label>
-              <input type="checkbox" name="remember"value="remember-me"> Stay logged in </label>
+              <input type="checkbox" name="remember"value="remember-me"> {{ __('keywords.stay_logged_in') }} </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">{{ __('Login') }}</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">{{ __('keywords.login') }}</button>
           <p class="mt-5 mb-3 text-muted">© 2020</p>
         </form>
       </div>
