@@ -32,5 +32,29 @@ return [
     'email_address' => 'Email address',
     'profile' => 'Profile',
     'settings' => 'Settings',
-    'activities' => 'Activities',
+    'activities' => 'Activities',   
+
+    // admin dashboard keywords
+    'home' => 'Home',
+
+    // admin services keywords
+    'title' => 'Title',
+    'icon' => 'Icon',
+    'services' => 'Services',
+    'components' => 'Components',
+    'no_records_found' => 'No records found',
+    'actions' => 'Actions',
+    'add_new' => 'Add new', 
+    'title_required' => 'Title is required',
+    'icon_required' => 'Icon is required',
+    'description_required' => 'Description is required',
+    'save' => 'Save',
+    'description' => 'Description',
+    'service_created_successfully' => 'Service created successfully',
+    'service_creation_failed' => 'Service creation failed',
+    'service_not_found' => 'Service not found',
+    'service_deleted_successfully' => 'Service deleted successfully',
+    'service_deletion_failed' => 'Service deletion failed',
+    'service_updated_successfully' => 'Service updated successfully',
+    'service_update_failed' => 'Service update failed',
 ];

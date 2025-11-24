@@ -32,4 +32,28 @@ return [
     'profile' => 'الملف الشخصي',
     'settings' => 'الإعدادات',
     'activities' => 'النشاطات',
+
+    // admin dashboard keywords
+    'home' => 'الرئيسية',
+
+    // admin services keywords
+    'title' => 'العنوان',
+    'icon' => 'الأيقونة',
+    'services' => 'الخدمات',
+    'components' => 'المكونات',     
+    'no_records_found' => 'لا يوجد بيانات', 
+    'actions' => 'الإجراءات',   
+    'add_new' => 'إضافة جديد', 
+    'title_required' => 'العنوان مطلوب',
+    'icon_required' => 'الأيقونة مطلوبة',
+    'description_required' => 'الوصف مطلوب',
+    'save' => 'حفظ',
+    'description' => 'الوصف',
+    'service_created_successfully' => 'تم إضافة الخدمة بنجاح',
+    'service_creation_failed' => 'فشل إضافة الخدمة',
+    'service_not_found' => 'الخدمة غير موجودة',
+    'service_deleted_successfully' => 'تم حذف الخدمة بنجاح',
+    'service_deletion_failed' => 'فشل حذف الخدمة',
+    'service_updated_successfully' => 'تم تحديث الخدمة بنجاح',
+    'service_update_failed' => 'فشل تحديث الخدمة',
 ];
