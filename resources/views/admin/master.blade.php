@@ -17,5 +17,13 @@
       </main> <!-- main -->
     </div> <!-- .wrapper -->
   @include('admin.partials.scripts')
+
+  <script>
+            function confirmdelete(id) {
+                if (confirm('Are you sure you want to delete this service?')) {
+                    $('#delete-form-'+id).submit();
+                }
+            }
+        </script>
   </body>
 </html> 

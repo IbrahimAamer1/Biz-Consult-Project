@@ -13,38 +13,28 @@
                             <form action="{{ route('admin.services.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="title">{{ __('keywords.title') }}</label>
+                                    <x-form-label for="title" />
                                     <input type="text" name="title" id="title" class="form-control" required>
-                                    @error('title')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                        <x-validation-error field="title" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="icon">{{ __('keywords.icon') }}</label>
+                                    <x-form-label for="icon" />
                                     <input type="text" name="icon" id="icon" class="form-control" required>
-                                    @error('icon')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <x-validation-error field="icon" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">{{ __('keywords.description') }}</label>
+                                    <x-form-label for="description" />
                                     <textarea name="description" id="description" class="form-control" required></textarea>
-                                    @error('description')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <x-validation-error field="description" />
                                 </div>
-                                <button type="submit" class="btn btn-primary">{{ __('keywords.save') }}</button>
+                                <!-- Submit Button Component -->
+                                <x-submit-button />
                             </form>
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-                            @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
+                                    @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                         </div>
                     </div>
                 </div>

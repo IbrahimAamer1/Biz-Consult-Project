@@ -8,12 +8,13 @@ use App\Http\Requests\UpdateServiceRequest;
 
 class ServiceController extends Controller
 {
+   // private const DIR = 'admin.services';
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::paginate(10);
+        $services = Service::paginate(config('pagination.count_per_page'));
         return view('admin.services.index', get_defined_vars());
     }
 

@@ -7,7 +7,7 @@
             <div class="col-12">
               <h2 class="h5 page-title right-align">{{ __('keywords.services') }}</h2>
               <div class="right-align">
-                <a href="{{ route('admin.services.create') }}" class="btn btn-primary">{{ __('keywords.add_new') }}</a>   
+                <x-action-button href="{{ route('admin.services.create') }}" type="create" />
               </div>
                     <!-- simple table -->
                     <div class="col-md-6 my-4">
@@ -30,43 +30,21 @@
                             <td>{{ $service->title }}</td>
                             <td> <i class="{{ $service->icon }} fa-2x"></i></td>
                             <td>
-                                <a href="{{ route('admin.services.edit', ['service' => $service]) }}" class="btn btn-primary btn-sm">
-                                    <i class="fe fe-edit"></i>
-                                </a>
-                                <form action="{{ route('admin.services.destroy', ['service' => $service]) }}" method="POST" class="d-inline-block"
-                                 id="delete-form-{{ $service->id }}">
-                                    @csrf 
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm" onclick= "confirmdelete('{{ $service->id }}')">
-                                        <i class="fe fe-trash" ></i>  
-                                    </button>
-                                </form>
-                                <a href="{{ route('admin.services.show', ['service' => $service]) }}" class="btn btn-info btn-sm">
-                                    <i class="fe fe-eye"></i>
-                                </a> 
+                                <x-action-button href="{{ route('admin.services.edit', ['service' => $service]) }}" type="edit" />
+                                 <!-- Show Button Component -->
+                                <x-action-button href="{{ route('admin.services.show', ['service' => $service]) }}" type="show" />
+                                
+                                <!-- Delete Button Component -->
+                                <x-delete-button href="{{ route('admin.services.destroy', ['service' => $service]) }}" id="{{ $service->id }}" />
                             </td>
                           </tr>
-                          @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-                            @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
-                          @endforeach
+                          @endforeach 
                           @else
-                          <tr>
-                            <td colspan="5" class="text-center text-danger">{{ __('keywords.no_records_found') }}</td>
-                          </tr>
+                          <!-- Empty Alert Component -->
+                          <x-empty-alert />
                           @endif
-                          @if (session('message'))
-                                <div class="alert alert-success">
-                                    {{ session('message') }}
-                                </div>
-                            @endif
+                          <!-- Success Message Component -->
+                          <x-sucess-message />
                             @if (session('something_went_wrong'))
                                 <div class="alert alert-danger">
                                     {{ session('something_went_wrong') }}
@@ -80,11 +58,5 @@
                   </div>
                 </div> <!-- simple table -->  
         </div> <!-- .container-fluid -->
-        <script>
-            function confirmdelete(id) {
-                if (confirm('Are you sure you want to delete this service?')) {
-                    $('#delete-form-'+id).submit();
-                }
-            }
-        </script>
+        
 @endsection 
