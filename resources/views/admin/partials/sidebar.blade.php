@@ -32,6 +32,18 @@
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <!-- Services -->
             <x-sidebar-tab href="{{ route('admin.services.index') }}" icon="fe-package fe-16" name="{{ __('keywords.services') }}" />
+            <!-- Features -->
+            <x-sidebar-tab href="{{ route('admin.features.index') }}" icon="fe-star fe-16" name="{{ __('keywords.features') }}" />
+            <!-- Messages -->
+            <x-sidebar-tab href="{{ route('admin.messages.index') }}" icon="fe-message-circle fe-16" name="{{ __('keywords.messages') }}" />
+            <!-- Subscribers -->
+            <x-sidebar-tab href="{{ route('admin.subscribers.index') }}" icon="fe-users fe-16" name="{{ __('keywords.subscribers') }}" />
+            <!-- Testimonials -->
+            <x-sidebar-tab href="{{ route('admin.testimonials.index') }}" icon="fe-message-square fe-16" name="{{ __('keywords.testimonials') }}" />
+            <!-- Companies -->
+            <x-sidebar-tab href="{{ route('admin.companies.index') }}" icon="fe-briefcase fe-16" name="{{ __('keywords.companies') }}" />
+            <!-- Members -->
+            <x-sidebar-tab href="{{ route('admin.members.index') }}" icon="fe-users fe-16" name="{{ __('keywords.members') }}" />
           </ul>
-        </nav>
+        </nav>  
       </aside>

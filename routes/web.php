@@ -4,6 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +43,39 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middle
         Route::resource('services', ServiceController::class);
     });
 
+    /* Admin Features */
+    Route::controller(FeatureController::class)->group(function (){
+        Route::resource('features', FeatureController::class);
+
     });
 
 
+    /* Admin messages */
+    Route::controller(MessageController::class)->group(function (){
+        Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+    });
+
+    /* Admin subscribers */
+    Route::controller(SubscriberController::class)->group(function (){
+        Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
+    });
+
+    /* Admin testimonials */
+    Route::controller(TestimonialController::class)->group(function (){
+        Route::resource('testimonials', TestimonialController::class);
+    });
+
+    /* Admin companies */
+    Route::controller(CompanyController::class)->group(function (){
+        Route::resource('companies', CompanyController::class);
+    });
+
+    /* Admin members */
+    Route::controller(MemberController::class)->group(function (){
+        Route::resource('members', MemberController::class);
+    });
+
+    });
 
 
         require __DIR__.'/auth.php';

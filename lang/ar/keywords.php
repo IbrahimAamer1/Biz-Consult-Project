@@ -56,4 +56,13 @@ return [
     'service_deletion_failed' => 'فشل حذف الخدمة',
     'service_updated_successfully' => 'تم تحديث الخدمة بنجاح',
     'service_update_failed' => 'فشل تحديث الخدمة',
+    'features' => 'الميزات',
+    'feature_created_successfully' => 'تم إضافة الميزة بنجاح',
+    'feature_creation_failed' => 'فشل إضافة الميزة',
+    'feature_not_found' => 'الميزة غير موجودة',
+    'feature_deleted_successfully' => 'تم حذف الميزة بنجاح',
+    'feature_deletion_failed' => 'فشل حذف الميزة',
+    'feature_updated_successfully' => 'تم تحديث الميزة بنجاح',
+    'feature_update_failed' => 'فشل تحديث الميزة',
+    'companies' => 'الشركات',
 ];
