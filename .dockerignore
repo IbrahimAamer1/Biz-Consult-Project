@@ -1,0 +1,106 @@
+# ============================================
+# .dockerignore - استبعاد الملفات من Docker Build
+# ============================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+.gitkeep
+
+# Docker (مهم: لا تتجاهل docker/ لأنه يحتوي config مهم)
+Dockerfile
+docker-compose.yml
+docker-compose.test.yml
+.dockerignore
+DOCKER-TROUBLESHOOTING.md
+.env.docker.example
+
+# Editors & IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Laravel
+/vendor
+/node_modules
+
+/storage/*.key
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+.env
+.env.*
+.env.local
+.env.production
+.env.backup
+
+# Build output
+/public/build
+/public/hot
+/public/mix-manifest.json
+/public/storage
+
+# Tests
+/tests
+phpunit.xml
+.phpunit*
+coverage/
+
+# Documentation
+README.md
+*.md
+docs/
+LICENSE
+CHANGELOG.md
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Temp
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# Package managers
+yarn.lock   # مسموح
+# (لا تستبعد composer.lock أو package-lock.json)
+
+# Misc
+Homestead.json
+Homestead.yaml
+auth.json
+.npm
+.eslintcache
+.stylelintcache
